@@ -198,7 +198,6 @@ export default function LandingPage() {
         return
       }
 
-      // Crear FormData para FormSubmit
       const formDataToSend = new FormData()
       formDataToSend.append("nombre", formData.nombre)
       formDataToSend.append("apellido", formData.apellido)
@@ -206,7 +205,10 @@ export default function LandingPage() {
       formDataToSend.append("_subject", "Nuevo contacto desde la web")
       formDataToSend.append("_captcha", "false")
       formDataToSend.append("_autoresponse", "false")
-      formDataToSend.append("_next", window.location.href)
+      formDataToSend.append("_template", "table")
+      formDataToSend.append("_next", "https://monicabogacoaching.vercel.app/")
+
+      console.log("[v0] Enviando formulario de contacto...")
 
       // Enviar a FormSubmit
       const response = await fetch("https://formsubmit.co/info@monicaboga.com", {
@@ -214,9 +216,12 @@ export default function LandingPage() {
         body: formDataToSend,
       })
 
+      console.log("[v0] Respuesta del servidor:", response.status, response.statusText)
+
       if (response.ok) {
         setSubmitStatus("success")
         setSubmitMessage(`¡Mensaje enviado exitosamente!`)
+        console.log("[v0] Email enviado correctamente")
         // Limpiar formulario
         setFormData({ nombre: "", apellido: "", email: "" })
 
@@ -227,11 +232,14 @@ export default function LandingPage() {
           setSubmitStatus(null)
         }, 3000)
       } else {
-        throw new Error("Error en el envío")
+        const errorText = await response.text()
+        console.error("[v0] Error de FormSubmit:", errorText)
+        throw new Error(`Error ${response.status}: ${errorText}`)
       }
     } catch (error) {
+      console.error("[v0] Error completo:", error)
       setSubmitStatus("error")
-      setSubmitMessage("Hubo un error al enviar el mensaje")
+      setSubmitMessage("Hubo un error al enviar el mensaje. Por favor escribí directamente a info@monicaboga.com")
     } finally {
       setIsSubmitting(false)
     }
@@ -246,7 +254,6 @@ export default function LandingPage() {
       setSubmitStatus(null)
 
       try {
-        // Crear FormData para FormSubmit
         const formDataToSend = new FormData()
         formDataToSend.append("nombre", preTestData.name)
         formDataToSend.append("apellido", preTestData.lastName)
@@ -254,13 +261,18 @@ export default function LandingPage() {
         formDataToSend.append("_subject", "Nuevo contacto desde la web")
         formDataToSend.append("_captcha", "false")
         formDataToSend.append("_autoresponse", "false")
-        formDataToSend.append("_next", window.location.href)
+        formDataToSend.append("_template", "table")
+        formDataToSend.append("_next", "https://monicabogacoaching.vercel.app/")
+
+        console.log("[v0] Enviando formulario pre-test...")
 
         // Enviar a FormSubmit
         const response = await fetch("https://formsubmit.co/info@monicaboga.com", {
           method: "POST",
           body: formDataToSend,
         })
+
+        console.log("[v0] Respuesta del servidor:", response.status, response.statusText)
 
         if (response.ok) {
           setSubmitStatus("success")
@@ -286,7 +298,9 @@ export default function LandingPage() {
             console.log("[v0] Proceso completado correctamente")
           }, 1000)
         } else {
-          throw new Error("Error en el envío")
+          const errorText = await response.text()
+          console.error("[v0] Error de FormSubmit:", errorText)
+          throw new Error(`Error ${response.status}: ${errorText}`)
         }
       } catch (error) {
         console.error("[v0] Error al enviar email:", error)
@@ -322,26 +336,34 @@ export default function LandingPage() {
       formData.append("_subject", "Solicitud de resultados del test de liderazgo")
       formData.append("_captcha", "false")
       formData.append("_autoresponse", "false")
+      formData.append("_template", "table")
       formData.append(
         "message",
         `${emailCaptureData.name} completó el test de liderazgo y solicita recibir los resultados.`,
       )
-      formData.append("_next", window.location.href)
+      formData.append("_next", "https://monicabogacoaching.vercel.app/")
+
+      console.log("[v0] Enviando captura de email del test...")
 
       const response = await fetch("https://formsubmit.co/info@monicaboga.com", {
         method: "POST",
         body: formData,
       })
 
+      console.log("[v0] Respuesta del servidor:", response.status, response.statusText)
+
       if (response.ok) {
         setShowEmailCapture(false)
         setShowResult(true)
+        console.log("[v0] Email de test enviado correctamente")
         alert(`¡Perfecto ${emailCaptureData.name}! Te enviamos los resultados a tu email y podés verlos ahora también.`)
       } else {
-        throw new Error("Error en el envío")
+        const errorText = await response.text()
+        console.error("[v0] Error de FormSubmit:", errorText)
+        throw new Error(`Error ${response.status}: ${errorText}`)
       }
     } catch (error) {
-      console.error("Error al enviar email:", error)
+      console.error("[v0] Error al enviar email:", error)
       setShowEmailCapture(false)
       setShowResult(true)
       alert(`¡Hola ${emailCaptureData.name}! Hubo un error al enviar el email, pero podés ver tus resultados ahora.`)
