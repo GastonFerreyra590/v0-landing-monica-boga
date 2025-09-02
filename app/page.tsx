@@ -204,14 +204,12 @@ export default function LandingPage() {
       formDataToSend.append("email", formData.email)
       formDataToSend.append("_subject", "Nuevo contacto desde la web")
       formDataToSend.append("_captcha", "false")
-      formDataToSend.append("_autoresponse", "false")
-      formDataToSend.append("_template", "table")
-      formDataToSend.append("_next", "https://monicabogacoaching.vercel.app/")
+      formDataToSend.append("_url", window.location.href)
 
       console.log("[v0] Enviando formulario de contacto...")
 
       // Enviar a FormSubmit
-      const response = await fetch("https://formsubmit.co/info@monicaboga.com", {
+      const response = await fetch("https://formsubmit.co/monicabogacoach@gmail.com", {
         method: "POST",
         body: formDataToSend,
       })
@@ -220,17 +218,19 @@ export default function LandingPage() {
 
       if (response.ok) {
         setSubmitStatus("success")
-        setSubmitMessage(`¡Mensaje enviado exitosamente!`)
+        setSubmitMessage(
+          `¡Mensaje enviado exitosamente! Si no recibís el email en unos minutos, revisá tu carpeta de spam.`,
+        )
         console.log("[v0] Email enviado correctamente")
         // Limpiar formulario
         setFormData({ nombre: "", apellido: "", email: "" })
 
-        // Cerrar modal después de 3 segundos
+        // Cerrar modal después de 5 segundos para dar tiempo a leer el mensaje
         setTimeout(() => {
           setShowForm(false)
           setSubmitMessage("")
           setSubmitStatus(null)
-        }, 3000)
+        }, 5000)
       } else {
         const errorText = await response.text()
         console.error("[v0] Error de FormSubmit:", errorText)
@@ -239,7 +239,7 @@ export default function LandingPage() {
     } catch (error) {
       console.error("[v0] Error completo:", error)
       setSubmitStatus("error")
-      setSubmitMessage("Hubo un error al enviar el mensaje. Por favor escribí directamente a info@monicaboga.com")
+      setSubmitMessage("Hubo un error al enviar el mensaje. Por favor escribí directamente a monicabogacoach@gmail.com")
     } finally {
       setIsSubmitting(false)
     }
@@ -260,14 +260,12 @@ export default function LandingPage() {
         formDataToSend.append("email", preTestData.email)
         formDataToSend.append("_subject", "Nuevo contacto desde la web")
         formDataToSend.append("_captcha", "false")
-        formDataToSend.append("_autoresponse", "false")
-        formDataToSend.append("_template", "table")
-        formDataToSend.append("_next", "https://monicabogacoaching.vercel.app/")
+        formDataToSend.append("_url", window.location.href)
 
         console.log("[v0] Enviando formulario pre-test...")
 
         // Enviar a FormSubmit
-        const response = await fetch("https://formsubmit.co/info@monicaboga.com", {
+        const response = await fetch("https://formsubmit.co/monicabogacoach@gmail.com", {
           method: "POST",
           body: formDataToSend,
         })
@@ -280,10 +278,12 @@ export default function LandingPage() {
 
           if (showMiniTestAfterForm) {
             alert(
-              `¡Perfecto ${preTestData.name}! Los datos se enviaron exitosamente. Ahora podés comenzar el diagnóstico.`,
+              `¡Perfecto ${preTestData.name}! Los datos se enviaron exitosamente. Si no recibís confirmación, revisá tu spam. Ahora podés comenzar el diagnóstico.`,
             )
           } else {
-            alert(`¡Gracias ${preTestData.name}! Los datos se enviaron exitosamente. Mónica te contactará pronto.`)
+            alert(
+              `¡Gracias ${preTestData.name}! Los datos se enviaron exitosamente. Si no recibís confirmación, revisá tu spam. Mónica te contactará pronto.`,
+            )
           }
 
           setTimeout(() => {
@@ -316,7 +316,7 @@ export default function LandingPage() {
           setAnswers([])
           setShowResult(false)
         } else {
-          alert(`Hubo un error al enviar el mensaje. Por favor escribí directamente a info@monicaboga.com`)
+          alert(`Hubo un error al enviar el mensaje. Por favor escribí directamente a monicabogacoach@gmail.com`)
           setShowPreTestForm(false)
         }
       } finally {
@@ -335,17 +335,15 @@ export default function LandingPage() {
       formData.append("email", emailCaptureData.email)
       formData.append("_subject", "Solicitud de resultados del test de liderazgo")
       formData.append("_captcha", "false")
-      formData.append("_autoresponse", "false")
-      formData.append("_template", "table")
       formData.append(
         "message",
         `${emailCaptureData.name} completó el test de liderazgo y solicita recibir los resultados.`,
       )
-      formData.append("_next", "https://monicabogacoaching.vercel.app/")
+      formData.append("_url", window.location.href)
 
       console.log("[v0] Enviando captura de email del test...")
 
-      const response = await fetch("https://formsubmit.co/info@monicaboga.com", {
+      const response = await fetch("https://formsubmit.co/monicabogacoach@gmail.com", {
         method: "POST",
         body: formData,
       })
@@ -356,7 +354,9 @@ export default function LandingPage() {
         setShowEmailCapture(false)
         setShowResult(true)
         console.log("[v0] Email de test enviado correctamente")
-        alert(`¡Perfecto ${emailCaptureData.name}! Te enviamos los resultados a tu email y podés verlos ahora también.`)
+        alert(
+          `¡Perfecto ${emailCaptureData.name}! Te enviamos los resultados a tu email. Si no los recibís, revisá tu carpeta de spam. También podés verlos ahora.`,
+        )
       } else {
         const errorText = await response.text()
         console.error("[v0] Error de FormSubmit:", errorText)
@@ -1149,6 +1149,57 @@ export default function LandingPage() {
       </section>
 
       {/* Footer */}
+      <section id="contacto" className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#EAFBF4] to-[#F4FCF9]">
+        <div className="max-w-4xl mx-auto text-center">
+          <h2 className="font-serif text-4xl font-bold text-[#173E63] mb-6">Conectemos</h2>
+          <div className="w-24 h-1 bg-gradient-to-r from-[#173E63] to-[#C3F3E2] mx-auto rounded-full mb-6"></div>
+          <p className="text-xl text-slate-600 mb-16 max-w-2xl mx-auto leading-relaxed">
+            ¿Tenés preguntas? ¿Querés saber si mi mentoría es para vos? Contactame por el medio que prefieras.
+          </p>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <Card className="border-0 bg-white/80 backdrop-blur-sm shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 rounded-2xl overflow-hidden">
+              <CardContent className="p-8 text-center">
+                <div className="w-16 h-16 bg-gradient-to-br from-[#C3F3E2] to-[#C3F3E2]/80 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
+                  <MessageCircle className="w-8 h-8 text-[#173E63]" />
+                </div>
+                <h3 className="font-semibold text-lg text-[#173E63] mb-3">WhatsApp</h3>
+                <p className="text-slate-600 mb-6 font-medium">+54 9 11 4071-4477</p>
+                <Button
+                  variant="link"
+                  className="text-[#173E63] hover:text-[#173E63]/80 font-semibold transition-colors group"
+                  onClick={handleWhatsAppContact}
+                >
+                  <span className="flex items-center gap-2">
+                    Enviar mensaje <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                  </span>
+                </Button>
+              </CardContent>
+            </Card>
+
+            <Card className="border-0 bg-white/80 backdrop-blur-sm shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 rounded-2xl overflow-hidden">
+              <CardContent className="p-8 text-center">
+                <div className="w-16 h-16 bg-gradient-to-br from-[#D7F2FF] to-[#D7F2FF]/80 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
+                  <Mail className="w-8 h-8 text-[#173E63]" />
+                </div>
+                <h3 className="font-semibold text-lg text-[#173E63] mb-3">Email</h3>
+                <p className="text-slate-600 mb-6 font-medium">info@monicaboga.com</p>
+                <Button
+                  variant="link"
+                  className="text-[#173E63] hover:text-[#173E63]/80 font-semibold transition-colors group"
+                  onClick={handleInfoRequest}
+                >
+                  <span className="flex items-center gap-2">
+                    Enviar email <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
+                  </span>
+                </Button>
+              </CardContent>
+            </Card>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
       <footer className="bg-gradient-to-r from-[#173E63] to-[#173E63]/95 text-white py-20 px-4">
         <div className="max-w-6xl mx-auto">
           <div className="grid md:grid-cols-3 gap-12 mb-12">
@@ -1197,7 +1248,7 @@ export default function LandingPage() {
             <div className="text-center md:text-right">
               <h3 className="text-lg font-semibold mb-6">Contacto</h3>
               <div className="space-y-3 text-slate-300 mb-6">
-                <p className="hover:text-white transition-colors">info@monicaboga.com</p>
+                <p className="hover:text-white transition-colors">monicabogacoach@gmail.com</p>
                 <p className="hover:text-white transition-colors">+54 11 4321-8765</p>
               </div>
               <div className="flex justify-center md:justify-end gap-4">
@@ -1578,7 +1629,7 @@ export default function LandingPage() {
                     <div className="flex flex-col sm:flex-row gap-4 pt-6">
                       <Button
                         size="lg"
-                        className="bg-gradient-to-r from-[#00FF88] to-[#00CC6A] hover:from-[#00FF88] hover:to-[#00FF88] text-black px-8 py-4 text-lg rounded-full transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,255,136,0.6)] hover:scale-110 font-bold"
+                        className="bg-gradient-to-r from-[#00FF88] to-[#00CC6A] hover:from-[#00FF88] hover:to-[#00CC6A] text-black px-8 py-4 text-lg rounded-full transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,255,136,0.6)] hover:scale-110 font-bold"
                         onClick={() => {
                           setShowMiniTest(false)
                           setShowForm(true)
