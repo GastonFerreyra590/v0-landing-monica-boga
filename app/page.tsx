@@ -548,7 +548,7 @@ export default function LandingPage() {
                 <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight">
                   Mapa de Liderazgo: <span className="text-white/80">Diseñá la Ruta</span>,
                   <span className="block mt-3 bg-gradient-to-r from-[#C3F3E2] to-[#00FF88] bg-clip-text text-transparent">
-                    deja tu huella
+                    dejá tu huella
                   </span>
                 </h1>
                 <div className="space-y-5 text-lg text-white/90 leading-relaxed">
@@ -776,7 +776,7 @@ export default function LandingPage() {
                               <div className="w-2 h-2 bg-white rounded-full m-0.5 animate-pulse"></div>
                             )}
                           </div>
-                          <span className="text-gray-700 leading-relaxed font-medium">{option.text}</span>
+                          <span className="text-gray-900 leading-relaxed font-medium">{option.text}</span>
                         </div>
                       </button>
                     ))}
@@ -900,16 +900,7 @@ export default function LandingPage() {
                     sostuvieron en el tiempo y logramos percibir claramente el retorno de la inversión."
                   </p>
                   <div className="border-t border-[#C3F3E2] pt-6">
-                    <p className="font-semibold text-[#173E63] text-lg">
-                      <a
-                        href="https://www.ericnet.com.ar"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="hover:text-[#00E5FF] transition-colors duration-300"
-                      >
-                        Jose Merlo
-                      </a>
-                    </p>
+                    <p className="font-semibold text-[#173E63] text-lg">Jose Merlo</p>
                     <p className="text-sm text-slate-600">Ericnet – intelligent Solution</p>
                   </div>
                 </div>
@@ -926,16 +917,7 @@ export default function LandingPage() {
                     fortalezas."
                   </p>
                   <div className="border-t border-[#C3F3E2] pt-6">
-                    <p className="font-semibold text-[#173E63] text-lg">
-                      <a
-                        href="https://www.instagram.com/laurem.art?igsh=Yjd3aWNleG1lazkx"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="hover:text-[#00E5FF] transition-colors duration-300"
-                      >
-                        Laura Morales
-                      </a>
-                    </p>
+                    <p className="font-semibold text-[#173E63] text-lg">Laura Morales</p>
                     <p className="text-sm text-slate-600">Laurem.art</p>
                   </div>
                 </div>
@@ -957,16 +939,7 @@ export default function LandingPage() {
                     & Tecnología) y fui conferencista, presentando las virtudes de nuestro software."
                   </p>
                   <div className="border-t border-[#C3F3E2] pt-6">
-                    <p className="font-semibold text-[#173E63] text-lg">
-                      <a
-                        href="https://simobsoftware.com/"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="hover:text-[#00E5FF] transition-colors duration-300"
-                      >
-                        Melina Risso
-                      </a>
-                    </p>
+                    <p className="font-semibold text-[#173E63] text-lg">Melina Risso</p>
                     <p className="text-sm text-slate-600">Simob Software</p>
                   </div>
                 </div>
@@ -1652,7 +1625,7 @@ export default function LandingPage() {
                                 <div className="w-2 h-2 bg-white rounded-full m-0.5 animate-pulse"></div>
                               )}
                             </div>
-                            <span className="text-gray-700 leading-relaxed font-medium">{option.text}</span>
+                            <span className="text-gray-900 leading-relaxed font-medium">{option.text}</span>
                           </div>
                         </button>
                       ))}
