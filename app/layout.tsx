@@ -21,9 +21,17 @@ export const metadata: Metadata = {
     "Mentoría estratégica para líderes que buscan claridad, energía y propósito. Programa Rumbo Claro - 6 semanas de transformación profesional.",
   generator: "v0.dev",
   icons: {
-    icon: "/icon.jpg",
-    shortcut: "/icon.jpg",
-    apple: "/icon.jpg",
+    icon: [
+      { url: "/favicon.ico", sizes: "32x32" },
+      { url: "/favicon-96x96.jpg", sizes: "96x96", type: "image/png" },
+      { url: "/favicon.jpg", type: "image/svg+xml" },
+    ],
+    shortcut: "/favicon.ico",
+    apple: "/apple-touch-icon.jpg",
+  },
+  manifest: "/site.webmanifest",
+  appleWebApp: {
+    title: "Mónica Boga Coaching",
   },
 }
 
