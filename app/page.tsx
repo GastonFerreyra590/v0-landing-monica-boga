@@ -1092,7 +1092,7 @@ export default function LandingPage() {
                   <Mail className="w-8 h-8 text-[#173E63]" />
                 </div>
                 <h3 className="font-semibold text-lg text-[#173E63] mb-3">Email</h3>
-                <p className="text-slate-600 mb-6 font-medium">info@monicaboga.com</p>
+                <p className="text-slate-600 mb-6 font-medium">monicabogacoach@gmail.com</p>
                 <Button
                   variant="link"
                   className="text-[#173E63] hover:text-[#173E63]/80 font-semibold transition-colors group"
@@ -1140,57 +1140,6 @@ export default function LandingPage() {
                 >
                   <span className="flex items-center gap-2">
                     Seguir <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                  </span>
-                </Button>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Footer */}
-      <section id="contacto" className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#EAFBF4] to-[#F4FCF9]">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="font-serif text-4xl font-bold text-[#173E63] mb-6">Conectemos</h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-[#173E63] to-[#C3F3E2] mx-auto rounded-full mb-6"></div>
-          <p className="text-xl text-slate-600 mb-16 max-w-2xl mx-auto leading-relaxed">
-            ¿Tenés preguntas? ¿Querés saber si mi mentoría es para vos? Contactame por el medio que prefieras.
-          </p>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            <Card className="border-0 bg-white/80 backdrop-blur-sm shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 rounded-2xl overflow-hidden">
-              <CardContent className="p-8 text-center">
-                <div className="w-16 h-16 bg-gradient-to-br from-[#C3F3E2] to-[#C3F3E2]/80 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
-                  <MessageCircle className="w-8 h-8 text-[#173E63]" />
-                </div>
-                <h3 className="font-semibold text-lg text-[#173E63] mb-3">WhatsApp</h3>
-                <p className="text-slate-600 mb-6 font-medium">+54 9 11 4071-4477</p>
-                <Button
-                  variant="link"
-                  className="text-[#173E63] hover:text-[#173E63]/80 font-semibold transition-colors group"
-                  onClick={handleWhatsAppContact}
-                >
-                  <span className="flex items-center gap-2">
-                    Enviar mensaje <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
-                  </span>
-                </Button>
-              </CardContent>
-            </Card>
-
-            <Card className="border-0 bg-white/80 backdrop-blur-sm shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 rounded-2xl overflow-hidden">
-              <CardContent className="p-8 text-center">
-                <div className="w-16 h-16 bg-gradient-to-br from-[#D7F2FF] to-[#D7F2FF]/80 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
-                  <Mail className="w-8 h-8 text-[#173E63]" />
-                </div>
-                <h3 className="font-semibold text-lg text-[#173E63] mb-3">Email</h3>
-                <p className="text-slate-600 mb-6 font-medium">info@monicaboga.com</p>
-                <Button
-                  variant="link"
-                  className="text-[#173E63] hover:text-[#173E63]/80 font-semibold transition-colors group"
-                  onClick={handleInfoRequest}
-                >
-                  <span className="flex items-center gap-2">
-                    Enviar email <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                   </span>
                 </Button>
               </CardContent>
