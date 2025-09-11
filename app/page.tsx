@@ -4,7 +4,6 @@ import React from "react"
 import { useState } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
-import { Badge } from "@/components/ui/badge"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import {
@@ -538,55 +537,50 @@ export default function LandingPage() {
 
       {/* Hero Section */}
       <section
-        className="relative py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#173E63] via-[#173E63] to-[#173E63]/90 overflow-hidden"
-        style={{ backgroundColor: "#173E63" }}
+        className="relative min-h-screen flex items-center justify-center px-4 sm:px-6 lg:px-8 pt-16 overflow-hidden"
+        style={{ background: "linear-gradient(135deg, #173E63 0%, #173E63 50%, #1a4a73 100%)" }}
       >
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-white/10 to-transparent rounded-full blur-3xl"></div>
-          <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-tr from-white/10 to-transparent rounded-full blur-3xl"></div>
-        </div>
+        <div
+          className="absolute inset-0"
+          style={{ background: "linear-gradient(135deg, #173E63 0%, #173E63 50%, #1a4a73 100%)" }}
+        ></div>
+        <div className="absolute inset-0 bg-[url('data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fillRule='evenodd'%3E%3Cg fill='%23ffffff' fillOpacity='0.03'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E')] opacity-30"></div>
 
-        <div className="max-w-6xl mx-auto relative z-10">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="space-y-8 order-2 lg:order-1">
-              <div className="space-y-6">
+        <div className="relative z-10 max-w-6xl mx-auto w-full">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+            <div className="space-y-6 lg:space-y-8 order-2 lg:order-1 text-center lg:text-left">
+              <div className="space-y-4 lg:space-y-6">
                 <Button
                   size="lg"
-                  className="bg-[#FF6B35] hover:bg-[#FF6B35]/90 text-white px-16 py-8 text-2xl rounded-full transition-all duration-300 hover:shadow-[0_0_30px_rgba(255,107,53,0.6)] hover:scale-105 shadow-lg font-bold w-fit"
+                  className="bg-[#FF6B35] hover:bg-[#FF6B35]/90 text-white px-8 sm:px-12 lg:px-16 py-6 lg:py-8 text-lg sm:text-xl lg:text-2xl rounded-full transition-all duration-300 hover:shadow-[0_0_30px_rgba(255,107,53,0.6)] hover:scale-105 shadow-lg font-bold w-full sm:w-auto max-w-md mx-auto lg:mx-0"
                   onClick={handleMiniTestStart}
-                  style={{ backgroundColor: "#FF6B35", color: "white" }}
                 >
                   Quiero mi diagnóstico
                 </Button>
 
-                <h1
-                  className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight"
-                  style={{ color: "white" }}
-                >
+                <h1 className="font-serif text-3xl sm:text-4xl lg:text-5xl xl:text-6xl font-bold text-white leading-tight">
                   Tu forma de liderar te juega a favor o en contra?
                 </h1>
 
-                <div className="space-y-5 text-lg text-white/90 leading-relaxed">
-                  <p className="text-white" style={{ color: "white" }}>
+                <div className="space-y-4 lg:space-y-5 text-base sm:text-lg text-white/90 leading-relaxed">
+                  <p className="text-white">
                     Descubrilo en solo 2 minutos de tu tiempo y recibí un diagnóstico claro de cómo transitas tu rol.
                   </p>
-                  <p className="text-white" style={{ color: "white" }}>
-                    Una pausa para repensar dónde estás y hacia dónde querés llegar.
-                  </p>
-                  <p className="text-white" style={{ color: "white" }}>
+                  <p className="text-white">Una pausa para repensar dónde estás y hacia dónde querés llegar.</p>
+                  <p className="text-white">
                     Te ayudo a ordenar tu rol y tu equipo para liderar con foco, sin perderte en el proceso.
                   </p>
                 </div>
               </div>
 
-              <div className="flex flex-col sm:flex-row gap-4 pt-4">
+              <div className="flex flex-col gap-4 pt-4">
                 <Button
                   size="lg"
-                  className="bg-[#FF6B35] hover:bg-[#FF6B35]/90 text-white px-16 py-6 text-xl rounded-full transition-all duration-300 hover:shadow-[0_0_30px_rgba(255,107,53,0.6)] hover:scale-105 shadow-lg font-bold w-full sm:w-auto min-w-[400px]"
+                  className="bg-[#FF6B35] hover:bg-[#FF6B35]/90 text-white px-8 sm:px-12 lg:px-16 py-4 lg:py-6 text-lg sm:text-xl rounded-full transition-all duration-300 hover:shadow-[0_0_30px_rgba(255,107,53,0.6)] hover:scale-105 shadow-lg font-bold w-full max-w-md mx-auto lg:mx-0"
                   onClick={handleMiniTestStart}
                   style={{ backgroundColor: "#FF6B35", color: "white" }}
                 >
-                  <Target className="w-6 h-6 mr-3" />
+                  <Target className="w-5 h-5 sm:w-6 sm:h-6 mr-2 sm:mr-3" />
                   Hacer Mini-Test
                 </Button>
               </div>
@@ -599,7 +593,7 @@ export default function LandingPage() {
                 <img
                   src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Moni%202.jpg-Rd9C3sXRmtNe5u2ITHj0ABJXVWrkTO.jpeg"
                   alt="Mónica Boga - Coach Profesional"
-                  className="relative w-80 h-80 sm:w-96 sm:h-96 object-cover rounded-3xl shadow-2xl border-4 border-white/70 backdrop-blur-sm"
+                  className="relative w-64 h-64 sm:w-80 sm:h-80 lg:w-96 lg:h-96 object-cover rounded-3xl shadow-2xl border-4 border-white/70 backdrop-blur-sm"
                 />
               </div>
             </div>
@@ -821,10 +815,50 @@ export default function LandingPage() {
       </section>
 
       {/* About Monica Section */}
-      <section id="sobre-mi" className="py-24 px-4 scroll-mt-16 bg-white">
+      <section
+        id="sobre-mi"
+        className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-white to-[#EAFBF4]"
+      >
         <div className="max-w-6xl mx-auto">
-          <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <div className="order-last lg:order-first">
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-16 items-center">
+            <div className="order-2 lg:order-1">
+              <div className="space-y-6 lg:space-y-8">
+                <div>
+                  <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-[#173E63] mb-4 lg:mb-6">
+                    Mi Historia
+                  </h2>
+                  <div className="w-20 sm:w-24 h-1 bg-gradient-to-r from-[#173E63] to-[#C3F3E2] rounded-full mb-6 lg:mb-8"></div>
+                </div>
+
+                <div className="space-y-5 text-lg text-slate-700 leading-relaxed">
+                  <p>
+                    Durante más de 20 años, lideré desde adentro una empresa familiar. Ahí aprendí lo que no te enseñan
+                    en ningún manual: que podés tener logros, estructura y reconocimiento… y aún así sentirte perdido/a
+                    en tu propio rol.
+                  </p>
+                  <p>
+                    Yo también estuve ahí: sosteniendo a todos sin tiempo para preguntarme si eso era lo que realmente
+                    quería. Hasta que un día, me elegí.
+                  </p>
+                  <p>
+                    Hoy acompaño a líderes como vos que también quieren hacerlo. Líderes que no buscan parecer fuertes,
+                    sino sentirse en paz. Líderes que quieren dejar de apagar incendios y empezar a vivir su rol con
+                    claridad, presencia y sentido.
+                  </p>
+                </div>
+
+                <Button
+                  className="bg-[#00FF88] hover:bg-[#00FF88]/90 text-black px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg rounded-full transition-all duration-300 hover:shadow-[0_0_25px_rgba(0,255,136,0.5)] hover:scale-105 font-semibold w-full sm:w-auto"
+                  onClick={handleInfoRequest}
+                  style={{ backgroundColor: "#00FF88", color: "black" }}
+                >
+                  <MessageCircle className="w-4 h-4 sm:w-5 sm:h-5 mr-2" />
+                  Hacer el Test Gratis Ahora
+                </Button>
+              </div>
+            </div>
+
+            <div className="order-1 lg:order-2">
               <div className="relative">
                 <div className="absolute -inset-4 bg-gradient-to-r from-[#C3F3E2]/20 to-[#D7F2FF]/20 rounded-3xl blur-2xl"></div>
                 <Image
@@ -836,72 +870,27 @@ export default function LandingPage() {
                 />
               </div>
             </div>
-
-            <div className="space-y-8">
-              <div>
-                <Badge
-                  variant="outline"
-                  className="text-[#173E63] border-[#C3F3E2] bg-gradient-to-r from-[#C3F3E2]/30 to-[#D7F2FF]/30 mb-6 px-4 py-2 rounded-full"
-                >
-                  Mi Historia
-                </Badge>
-                <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[#173E63] mb-6">Soy Mónica Boga</h2>
-                <div className="w-16 h-1 bg-gradient-to-r from-[#173E63] to-[#C3F3E2] rounded-full mb-6"></div>
-              </div>
-
-              <div className="space-y-6 text-slate-700 leading-relaxed">
-                <p className="text-lg">
-                  Durante más de 20 años, lideré desde adentro una empresa familiar. Ahí aprendí lo que no te enseñan en
-                  ningún manual: que podés tener logros, estructura y reconocimiento… y aún así sentirte perdido/a en tu
-                  propio rol.
-                </p>
-                <p className="text-lg">
-                  Yo también estuve ahí: sosteniendo a todos sin tiempo para preguntarme si eso era lo que realmente
-                  quería. Hasta que un día, me elegí.
-                </p>
-                <p className="text-lg">
-                  Hoy acompaño a líderes como vos que también quieren hacerlo. Líderes que no buscan parecer fuertes,
-                  sino sentirse en paz. Líderes que quieren dejar de apagar incendios y empezar a vivir su rol con
-                  claridad, presencia y sentido.
-                </p>
-              </div>
-
-              <div className="pt-4">
-                <Button
-                  size="lg"
-                  className="bg-gradient-to-r from-[#00FF88] to-[#00FF88]/90 hover:from-[#00FF88]/90 hover:to-[#00FF88] text-black px-8 py-4 text-lg rounded-full transition-all duration-300 hover:shadow-2xl hover:scale-105 shadow-lg"
-                  onClick={handleInfoRequest}
-                  style={{ backgroundColor: "#00FF88", color: "black" }}
-                >
-                  <MessageCircle className="w-5 h-5 mr-2" />
-                  Hacer el Test Gratis Ahora
-                </Button>
-              </div>
-            </div>
           </div>
         </div>
       </section>
 
       {/* Testimonials Section */}
-      <section id="testimonios" className="py-24 px-4 scroll-mt-16 bg-gradient-to-b from-[#EAFBF4] to-[#F4FCF9]">
+      <section
+        id="testimonios"
+        className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#EAFBF4] to-white"
+      >
         <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <Badge
-              variant="outline"
-              className="text-[#173E63] border-[#C3F3E2] bg-gradient-to-r from-[#C3F3E2]/30 to-[#D7F2FF]/30 mb-6 px-4 py-2 rounded-full"
-            >
-              Testimonios
-            </Badge>
-            <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[#173E63] mb-6">
-              La Historia de Mis Clientes
+          <div className="text-center mb-12 lg:mb-16">
+            <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-[#173E63] mb-4 lg:mb-6">
+              Lo que dicen mis clientes
             </h2>
-            <div className="w-24 h-1 bg-gradient-to-r from-[#173E63] to-[#C3F3E2] mx-auto rounded-full mb-6"></div>
-            <p className="text-lg text-slate-600 max-w-3xl mx-auto leading-relaxed">
-              Conocé las experiencias de líderes que transformaron su manera de liderar
+            <div className="w-20 sm:w-24 h-1 bg-gradient-to-r from-[#173E63] to-[#C3F3E2] mx-auto rounded-full mb-6 lg:mb-8"></div>
+            <p className="text-lg sm:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+              Testimonios reales de líderes que transformaron su forma de liderar
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid sm:grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6 lg:gap-8">
             <Card className="p-8 border-0 bg-white/80 backdrop-blur-sm h-full shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-105 rounded-2xl">
               <CardContent className="p-0">
                 <div className="space-y-6">
@@ -995,47 +984,39 @@ export default function LandingPage() {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-[#173E63] via-[#173E63] to-[#173E63]/90 relative overflow-hidden">
-        <div className="absolute inset-0 opacity-10">
-          <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent"></div>
-          <div
-            className="absolute top-0 left-0 w-full h-full"
-            style={{
-              backgroundImage: `radial-gradient(circle at 25% 25%, rgba(255,255,255,0.1) 2px, transparent 2px)`,
-              backgroundSize: "80px 80px",
-            }}
-          ></div>
-          <div className="absolute top-20 right-20 w-40 h-40 bg-white/5 rounded-full blur-3xl"></div>
-          <div className="absolute bottom-20 left-20 w-60 h-60 bg-white/5 rounded-full blur-3xl"></div>
-        </div>
+      <section
+        className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 relative overflow-hidden"
+        style={{ background: "linear-gradient(135deg, #173E63 0%, #173E63 50%, #1a4a73 100%)" }}
+      >
+        <div
+          className="absolute inset-0"
+          style={{ background: "linear-gradient(135deg, #173E63 0%, #173E63 50%, #1a4a73 100%)" }}
+        ></div>
+        <div
+          className="absolute inset-0 opacity-30"
+          style={{
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fillRule='evenodd'%3E%3Cg fill='%23ffffff' fillOpacity='0.05'%3E%3Ccircle cx='30' cy='30' r='2'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+          }}
+        ></div>
 
-        <div className="max-w-4xl mx-auto text-center relative z-10">
-          <h2 className="font-serif text-4xl sm:text-5xl font-bold text-white mb-8 leading-tight">
+        <div className="relative z-10 max-w-4xl mx-auto text-center">
+          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-6 lg:mb-8">
             Tu Certeza de Que Es Posible y Es Ahora
           </h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-[#C3F3E2] to-white mx-auto rounded-full mb-8"></div>
-          <p className="text-xl text-white/90 mb-8 max-w-3xl mx-auto leading-relaxed">
+          <div className="w-20 sm:w-24 h-1 bg-gradient-to-r from-[#C3F3E2] to-[#00FF88] mx-auto rounded-full mb-8 lg:mb-12"></div>
+          <p className="text-lg sm:text-xl text-white/90 mb-8 lg:mb-12 max-w-3xl mx-auto leading-relaxed">
             El presente es el momento perfecto para tomar acción. Lo que hacés ahora está sembrando para tu futuro. Si
             decidís empezar hoy, verás cambios en tu liderazgo.
           </p>
-          <p className="text-2xl font-bold text-[#C3F3E2] mb-12">¡No esperes más!</p>
+          <p className="text-xl sm:text-2xl font-bold text-[#C3F3E2] mb-8 lg:mb-12">¡No esperes más!</p>
 
-          <div className="flex flex-col sm:flex-row gap-6 justify-center">
+          <div className="flex justify-center">
             <Button
               size="lg"
-              className="bg-white text-[#173E63] hover:bg-[#00FF88] hover:text-black px-8 py-4 text-lg rounded-full transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,255,136,0.7)] hover:scale-110 shadow-lg font-bold"
-              onClick={handleInfoRequest}
-            >
-              <MessageCircle className="w-5 h-5 mr-2" />
-              Quiero más información
-            </Button>
-            <Button
-              variant="outline"
-              size="lg"
-              className="border-3 border-[#00E5FF] bg-gradient-to-r from-[#00E5FF] to-[#00D4FF] text-white hover:from-[#00E5FF] hover:to-[#00E5FF] px-12 py-6 text-xl rounded-full transition-all duration-300 hover:shadow-[0_0_35px_rgba(0,229,255,0.7)] hover:scale-115 font-bold animate-pulse shadow-[0_0_20px_rgba(0,229,255,0.4)]"
+              className="bg-[#FF6B35] hover:bg-[#FF6B35]/90 text-white px-8 sm:px-12 lg:px-16 py-4 lg:py-6 text-lg sm:text-xl rounded-full transition-all duration-300 hover:shadow-[0_0_30px_rgba(255,107,53,0.6)] hover:scale-105 shadow-lg font-bold w-full sm:w-auto max-w-md"
               onClick={handleMiniTestStart}
             >
-              <Target className="w-6 h-6 mr-3" />
+              <Target className="w-5 h-5 sm:w-6 sm:h-6 mr-2 sm:mr-3" />
               Hacer Mini-Test
             </Button>
           </div>
@@ -1043,15 +1024,18 @@ export default function LandingPage() {
       </section>
 
       {/* Contact Section */}
-      <section id="contacto" className="py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#EAFBF4] to-[#F4FCF9]">
+      <section
+        id="contacto"
+        className="py-16 sm:py-20 lg:py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-b from-[#EAFBF4] to-[#F4FCF9]"
+      >
         <div className="max-w-4xl mx-auto text-center">
-          <h2 className="font-serif text-4xl font-bold text-[#173E63] mb-6">Conectemos</h2>
-          <div className="w-24 h-1 bg-gradient-to-r from-[#173E63] to-[#C3F3E2] mx-auto rounded-full mb-6"></div>
-          <p className="text-xl text-slate-600 mb-16 max-w-2xl mx-auto leading-relaxed">
+          <h2 className="font-serif text-3xl sm:text-4xl font-bold text-[#173E63] mb-4 lg:mb-6">Conectemos</h2>
+          <div className="w-20 sm:w-24 h-1 bg-gradient-to-r from-[#173E63] to-[#C3F3E2] mx-auto rounded-full mb-6 lg:mb-8"></div>
+          <p className="text-lg sm:text-xl text-slate-600 mb-12 lg:mb-16 max-w-2xl mx-auto leading-relaxed">
             ¿Tenés preguntas? ¿Querés saber si mi mentoría es para vos? Contactame por el medio que prefieras.
           </p>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8">
             <Card className="border-0 bg-white/80 backdrop-blur-sm shadow-lg hover:shadow-2xl transition-all duration-300 hover:scale-105 rounded-2xl overflow-hidden">
               <CardContent className="p-8 text-center">
                 <div className="w-16 h-16 bg-gradient-to-br from-[#C3F3E2] to-[#C3F3E2]/80 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
@@ -1134,62 +1118,28 @@ export default function LandingPage() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-gradient-to-r from-[#173E63] to-[#173E63]/95 text-white py-20 px-4">
+      <footer className="py-12 lg:py-16 px-4 sm:px-6 lg:px-8" style={{ backgroundColor: "#173E63" }}>
         <div className="max-w-6xl mx-auto">
-          <div className="grid md:grid-cols-3 gap-12 mb-12">
-            <div className="text-center md:text-left">
-              <div className="flex items-center justify-center md:justify-start space-x-3 mb-6">
-                <div className="w-10 h-10 bg-white rounded-full flex items-center justify-center shadow-lg">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-12">
+            <div className="sm:col-span-2 lg:col-span-1">
+              <div className="flex items-center space-x-3 mb-6">
+                <div
+                  className="w-10 h-10 rounded-full flex items-center justify-center shadow-lg"
+                  style={{ backgroundColor: "#C3F3E2" }}
+                >
                   <span className="text-[#173E63] font-bold text-sm">MB</span>
                 </div>
-                <span className="font-serif text-xl font-bold">Mónica Boga</span>
+                <span className="font-serif text-xl font-bold text-white">Mónica Boga</span>
               </div>
-              <p className="text-slate-300 text-sm leading-relaxed">
-                Mentoría estratégica para líderes que buscan claridad, energía y propósito.
+              <p className="text-white/80 leading-relaxed mb-6">
+                Coach profesional especializada en liderazgo y desarrollo organizacional.
               </p>
-            </div>
 
-            <div className="text-center">
-              <h3 className="text-lg font-semibold mb-6">Enlaces rápidos</h3>
-              <ul className="space-y-3 text-slate-300">
-                <li>
-                  <button
-                    onClick={() => scrollToSection("sobre-mi")}
-                    className="hover:text-white transition-colors hover:underline"
-                  >
-                    Sobre Mí
-                  </button>
-                </li>
-                <li>
-                  <button
-                    onClick={() => scrollToSection("testimonios")}
-                    className="hover:text-white transition-colors hover:underline"
-                  >
-                    Testimonios
-                  </button>
-                </li>
-                <li>
-                  <button
-                    onClick={() => scrollToSection("contacto")}
-                    className="hover:text-white transition-colors hover:underline"
-                  >
-                    Contacto
-                  </button>
-                </li>
-              </ul>
-            </div>
-
-            <div className="text-center md:text-right">
-              <h3 className="text-lg font-semibold mb-6">Contacto</h3>
-              <div className="space-y-3 text-slate-300 mb-6">
-                <p className="hover:text-white transition-colors">monicabogacoach@gmail.com</p>
-                <p className="hover:text-white transition-colors">+54 11 4321-8765</p>
-              </div>
-              <div className="flex justify-center md:justify-end gap-4">
+              <div className="flex space-x-4">
                 <Button
                   variant="ghost"
                   size="sm"
-                  className="text-slate-300 hover:text-white hover:bg-white/10 transition-colors p-2"
+                  className="text-white/70 hover:text-white hover:bg-white/10 transition-colors p-2"
                   onClick={() =>
                     window.open("https://www.linkedin.com/in/monicabogacoachempresarialyejecutiva", "_blank")
                   }
@@ -1199,16 +1149,64 @@ export default function LandingPage() {
                 <Button
                   variant="ghost"
                   size="sm"
-                  className="text-slate-300 hover:text-white hover:bg-white/10 transition-colors p-2"
+                  className="text-white/70 hover:text-white hover:bg-white/10 transition-colors p-2"
                   onClick={() => window.open("https://www.instagram.com/monicabogacoach", "_blank")}
                 >
                   <Instagram className="w-5 h-5" />
                 </Button>
               </div>
             </div>
+
+            <div className="sm:col-span-1">
+              <h3 className="text-lg font-semibold mb-4 text-white">Menú</h3>
+              <ul className="space-y-3 text-white/80">
+                <li>
+                  <button
+                    onClick={() => scrollToSection("sobre-mi")}
+                    className="hover:text-white transition-colors hover:underline text-left w-full text-white/80"
+                  >
+                    Sobre Mí
+                  </button>
+                </li>
+                <li>
+                  <button
+                    onClick={() => scrollToSection("testimonios")}
+                    className="hover:text-white transition-colors hover:underline text-left w-full text-white/80"
+                  >
+                    Testimonios
+                  </button>
+                </li>
+                <li>
+                  <button
+                    onClick={() => scrollToSection("contacto")}
+                    className="hover:text-white transition-colors hover:underline text-left w-full text-white/80"
+                  >
+                    Contacto
+                  </button>
+                </li>
+              </ul>
+            </div>
+
+            <div className="sm:col-span-2 lg:col-span-1">
+              <h3 className="text-lg font-semibold mb-4 text-white">Contacto</h3>
+              <div className="space-y-3 text-white/80">
+                <p>
+                  Email:{" "}
+                  <a href="mailto:monicabogacoach@gmail.com" className="hover:text-white transition-colors">
+                    monicabogacoach@gmail.com
+                  </a>
+                </p>
+                <p>
+                  Teléfono:{" "}
+                  <a href="tel:+541143218765" className="hover:text-white transition-colors">
+                    +54 11 4321-8765
+                  </a>
+                </p>
+              </div>
+            </div>
           </div>
 
-          <div className="border-t border-slate-700 pt-8 text-center text-slate-400 text-sm">
+          <div className="border-t border-white/20 pt-6 text-center text-white/60">
             <p>&copy; 2025 Mónica Boga. Todos los derechos reservados.</p>
           </div>
         </div>
