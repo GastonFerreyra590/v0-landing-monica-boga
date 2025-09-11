@@ -452,8 +452,13 @@ export default function LandingPage() {
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center space-x-3">
-              <div className="w-10 h-10 bg-gradient-to-br from-[#173E63] to-[#173E63]/80 rounded-full flex items-center justify-center shadow-lg">
-                <span className="text-white font-bold text-sm">MB</span>
+              <div
+                className="w-10 h-10 bg-gradient-to-br from-[#173E63] to-[#173E63]/80 rounded-full flex items-center justify-center shadow-lg"
+                style={{ backgroundColor: "#173E63" }}
+              >
+                <span className="text-white font-bold text-sm" style={{ color: "white" }}>
+                  MB
+                </span>
               </div>
               <span className="font-serif text-xl font-bold text-[#173E63] tracking-tight">Mónica Boga</span>
             </div>
@@ -532,7 +537,10 @@ export default function LandingPage() {
       </nav>
 
       {/* Hero Section */}
-      <section className="relative py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#173E63] via-[#173E63] to-[#173E63]/90 overflow-hidden">
+      <section
+        className="relative py-24 px-4 sm:px-6 lg:px-8 bg-gradient-to-br from-[#173E63] via-[#173E63] to-[#173E63]/90 overflow-hidden"
+        style={{ backgroundColor: "#173E63" }}
+      >
         <div className="absolute inset-0 overflow-hidden">
           <div className="absolute -top-40 -right-40 w-80 h-80 bg-gradient-to-br from-white/10 to-transparent rounded-full blur-3xl"></div>
           <div className="absolute -bottom-40 -left-40 w-80 h-80 bg-gradient-to-tr from-white/10 to-transparent rounded-full blur-3xl"></div>
@@ -542,19 +550,30 @@ export default function LandingPage() {
           <div className="grid lg:grid-cols-2 gap-16 items-center">
             <div className="space-y-8 order-2 lg:order-1">
               <div className="space-y-6">
-                <Badge className="bg-gradient-to-r from-[#C3F3E2] to-[#D7F2FF] text-[#173E63] border-0 px-5 py-2.5 text-sm font-semibold rounded-full shadow-md">
-                  Mentoría Estratégica para Líderes
-                </Badge>
-                <h1 className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight">
-                  Mapa de Liderazgo: <span className="text-white/80">Diseñá la Ruta</span>,
-                  <span className="block mt-3 bg-gradient-to-r from-[#C3F3E2] to-[#00FF88] bg-clip-text text-transparent">
-                    dejá tu huella
-                  </span>
+                <Button
+                  size="lg"
+                  className="bg-[#FF6B35] hover:bg-[#FF6B35]/90 text-white px-8 py-4 text-lg rounded-full transition-all duration-300 hover:shadow-[0_0_30px_rgba(255,107,53,0.6)] hover:scale-105 shadow-lg font-bold w-fit"
+                  onClick={handleMiniTestStart}
+                  style={{ backgroundColor: "#FF6B35", color: "white" }}
+                >
+                  Quiero mi diagnóstico
+                </Button>
+
+                <h1
+                  className="font-serif text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight"
+                  style={{ color: "white" }}
+                >
+                  Tu forma de liderar te juega a favor o en contra?
                 </h1>
+
                 <div className="space-y-5 text-lg text-white/90 leading-relaxed">
-                  <p className="font-semibold text-xl text-[#C3F3E2]">Revelá tu propia energía para un impacto real.</p>
-                  <p className="text-white/80">Una pausa para repensar dónde estás y hacia dónde querés llegar.</p>
-                  <p className="text-white/80">
+                  <p className="text-white" style={{ color: "white" }}>
+                    Descubrilo en solo 2 minutos de tu tiempo y recibí un diagnóstico claro de cómo transitas tu rol.
+                  </p>
+                  <p className="text-white" style={{ color: "white" }}>
+                    Una pausa para repensar dónde estás y hacia dónde querés llegar.
+                  </p>
+                  <p className="text-white" style={{ color: "white" }}>
                     Te ayudo a ordenar tu rol y tu equipo para liderar con foco, sin perderte en el proceso.
                   </p>
                 </div>
@@ -563,19 +582,11 @@ export default function LandingPage() {
               <div className="flex flex-col sm:flex-row gap-4 pt-4">
                 <Button
                   size="lg"
-                  className="bg-gradient-to-r from-[#00FF88] to-[#00CC6A] hover:from-[#00FF88] hover:to-[#00FF88] text-black px-8 py-4 text-lg rounded-full transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,255,136,0.6)] hover:scale-110 shadow-lg font-bold animate-pulse"
-                  onClick={handleInfoRequest}
-                >
-                  <MessageCircle className="w-5 h-5 mr-2" />
-                  Quiero más información
-                </Button>
-                <Button
-                  variant="outline"
-                  size="lg"
-                  className="border-3 border-[#00E5FF] bg-gradient-to-r from-[#00E5FF] to-[#00D4FF] text-white hover:from-[#00E5FF] hover:to-[#00E5FF] px-12 py-6 text-xl rounded-full transition-all duration-300 hover:shadow-[0_0_35px_rgba(0,229,255,0.7)] hover:scale-115 font-bold animate-pulse shadow-[0_0_20px_rgba(0,229,255,0.4)]"
+                  className="bg-[#00E5FF] hover:bg-[#00E5FF]/90 text-black px-8 py-4 text-lg rounded-full transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,229,255,0.6)] hover:scale-105 shadow-lg font-bold w-fit"
                   onClick={handleMiniTestStart}
+                  style={{ backgroundColor: "#00E5FF", color: "black" }}
                 >
-                  <Target className="w-6 h-6 mr-3" />
+                  <Target className="w-5 h-5 mr-2" />
                   Hacer Mini-Test
                 </Button>
               </div>
@@ -705,7 +716,7 @@ export default function LandingPage() {
                 <div className="flex flex-col sm:flex-row gap-4 pt-6">
                   <Button
                     size="lg"
-                    className="bg-gradient-to-r from-[#00FF88] to-[#00CC6A] hover:from-[#00FF88] hover:to-[#00FF88] text-black px-8 py-4 text-lg rounded-full transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,255,136,0.6)] hover:scale-110 font-bold"
+                    className="bg-gradient-to-r from-[#00FF88] to-[#00CC6A] hover:from-[#00FF88] hover:to-[#00CC6A] text-black px-8 py-4 text-lg rounded-full transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,255,136,0.6)] hover:scale-110 font-bold"
                     onClick={() => setShowPreTestForm(true)}
                   >
                     <MessageCircle className="w-5 h-5 mr-2" />
@@ -858,11 +869,12 @@ export default function LandingPage() {
               <div className="pt-4">
                 <Button
                   size="lg"
-                  className="bg-gradient-to-r from-[#173E63] to-[#173E63]/90 hover:from-[#173E63]/90 hover:to-[#173E63] text-white px-8 py-4 text-lg rounded-full transition-all duration-300 hover:shadow-2xl hover:scale-105 shadow-lg"
+                  className="bg-gradient-to-r from-[#00FF88] to-[#00FF88]/90 hover:from-[#00FF88]/90 hover:to-[#00FF88] text-black px-8 py-4 text-lg rounded-full transition-all duration-300 hover:shadow-2xl hover:scale-105 shadow-lg"
                   onClick={handleInfoRequest}
+                  style={{ backgroundColor: "#00FF88", color: "black" }}
                 >
                   <MessageCircle className="w-5 h-5 mr-2" />
-                  Conversemos
+                  Hacer el Test Gratis Ahora
                 </Button>
               </div>
             </div>
