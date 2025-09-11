@@ -552,7 +552,7 @@ export default function LandingPage() {
               <div className="space-y-6">
                 <Button
                   size="lg"
-                  className="bg-[#FF6B35] hover:bg-[#FF6B35]/90 text-white px-8 py-4 text-lg rounded-full transition-all duration-300 hover:shadow-[0_0_30px_rgba(255,107,53,0.6)] hover:scale-105 shadow-lg font-bold w-fit"
+                  className="bg-[#FF6B35] hover:bg-[#FF6B35]/90 text-white px-16 py-8 text-2xl rounded-full transition-all duration-300 hover:shadow-[0_0_30px_rgba(255,107,53,0.6)] hover:scale-105 shadow-lg font-bold w-fit"
                   onClick={handleMiniTestStart}
                   style={{ backgroundColor: "#FF6B35", color: "white" }}
                 >
@@ -582,11 +582,11 @@ export default function LandingPage() {
               <div className="flex flex-col sm:flex-row gap-4 pt-4">
                 <Button
                   size="lg"
-                  className="bg-[#00E5FF] hover:bg-[#00E5FF]/90 text-black px-8 py-4 text-lg rounded-full transition-all duration-300 hover:shadow-[0_0_30px_rgba(0,229,255,0.6)] hover:scale-105 shadow-lg font-bold w-fit"
+                  className="bg-[#FF6B35] hover:bg-[#FF6B35]/90 text-white px-16 py-6 text-xl rounded-full transition-all duration-300 hover:shadow-[0_0_30px_rgba(255,107,53,0.6)] hover:scale-105 shadow-lg font-bold w-full sm:w-auto min-w-[400px]"
                   onClick={handleMiniTestStart}
-                  style={{ backgroundColor: "#00E5FF", color: "black" }}
+                  style={{ backgroundColor: "#FF6B35", color: "white" }}
                 >
-                  <Target className="w-5 h-5 mr-2" />
+                  <Target className="w-6 h-6 mr-3" />
                   Hacer Mini-Test
                 </Button>
               </div>
